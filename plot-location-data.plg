@@ -1,0 +1,7 @@
+
+set timefmt "%Y-%m-%d %H:%M:%S"
+set datafile separator ";"
+set key autotitle columnhead
+set xdata time
+set xrange [ "2017-11-10 12:00:00" : "2017-11-10 12:05:00" ]
+plot "3.data" using 1:2 with linespoints
