@@ -5,13 +5,11 @@ import requests
 @route('/data/')
 def index():
     data = {"password": "ratkaisutalkootapahtuma"}
-    r = requests.post('https://fortum.hackjunction.com/api/locations/'+'3', data=data).text
+    r = requests.post('https://fortum.hackjunction.com/api/locations/', json=data).text
     try:
-#        response = urlopen(r)
-#        a = response.read()
         print r
-        return template('<pre>{{r}}</pre>!')
+        return template('<pre>{{r}}</pre>!', r=r)
     except URLError, e:
-        print 'No kittez. Got an error code:', e    
+        print 'No kittez. Got an error code:', e
 
 run(host='localhost', port=8080)
