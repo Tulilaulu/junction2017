@@ -2,29 +2,13 @@ $(function() {
   google.charts.load('current', {packages: ['corechart', 'line']});
   google.charts.setOnLoadCallback(make_plot);
 
-  function drawLineColors(own_data, region_data) {
+  function drawLineColors(own_data, region_data, other_region_data) {
 
-/*
-    data.addColumn('date', 'X');
-    data.addColumn('number', 'Oma');
-    data.addColumn('number', 'Lähiseutu');
-    data.addColumn('number', 'Kerava');
-
-    data.addRows([
-      [new Date(2017, 1, 1), 0, 2, 0],
-      [new Date(2017, 1, 2), 10, 5, 7],
-      [new Date(2017, 1, 3), 23, 15, 44],
-      [new Date(2017, 1, 4), 17, 9, 3],
-      [new Date(2017, 1, 5), 18, 10, 11],
-      [new Date(2017, 1, 6), 9, 5, 8],
-      [new Date(2017, 1, 7), 11, 3, 4]
-    ]);
-*/
-    console.log(region_data.data);
-
-    function zip_energy(a, b) {
+    function zip_energy(a, b, c) {
       return a.map(function(e, i) {
-        return [e[0], e[1], b[i][1]];
+        var bv = i < b.length ? b[i][1] : "";
+        var cv = i < c.length ? c[i][1] : "";
+        return [e[0], e[1], bv, cv];
       });
     }
 
@@ -36,21 +20,25 @@ $(function() {
       )}});
     }
 
-    var zipped = zip_energy(own_data.data, region_data.data);
-
+    var zipped = zip_energy(own_data.data, region_data.data, other_region_data.data);
     //console.log(zipped);
 
     var rows = to_googlechart_fmt(zipped).slice(-7);
-
-
-
     //console.log(rows);
 
-    var cols = [ {label: "X", type: "date"}, {label: "My usage", type: "number"}, {label: "ESPOO", type: "number"}]
+    var cols = [
+      {label: "X", type: "date"},
+      {label: "My usage", type: "number"},
+      {label: "Espoo avg", type: "number"},
+      {label: "Vantaa avg", type: "number"}
+    ];
 
+    var data = new google.visualization.DataTable({
+      "cols" : cols,
+      "rows" : rows
+    });
 
 /*
-
     // GOOGLE JSON FORMAT EXAMPLE
 
     var json_data = {
@@ -70,25 +58,16 @@ $(function() {
             {"c": [{"v": "Date(2017, 1, 7)"}, {"v": 11}, {"v": 3}, {"v": 4}]}
           ]
     };
-*/
-
-    var json_data = {
-      "cols" : cols,
-      "rows" : rows
-    };
 
     var data = new google.visualization.DataTable(json_data);
+*/
 
     var options = {
-      hAxis: {
-        title: 'Date'
-      },
-      vAxis: {
-        title: 'Power consumption'
-      },
+      hAxis: { format: 'd/M/yy', title: 'Date' },
+      vAxis: { title: 'Power consumption' },
       colors: ['#00FF00', '#0000FF', '#FF0000'],
-      'width':800,
-      'height':600
+      width :800,
+      height :600
     };
 
     var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
@@ -104,7 +83,12 @@ $(function() {
         url: "avg/ESPOO",
         context: document.body
       }).done(function(espoo_data) {
-        drawLineColors(own_data, espoo_data);
+        $.ajax({
+        url: "avg/VANTAA",
+        context: document.body
+        }).done(function(vantaa_data) {
+          drawLineColors(own_data, espoo_data, vantaa_data);
+        });
       });
     });
   };

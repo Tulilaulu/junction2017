@@ -35,6 +35,10 @@ body, html{
 .block2 p{
   font-size: 0.4em;
 }
+#chart-wrapper {
+  margin-left: 25%;
+  width: 50%;
+}
 img{
   cursor: pointer;
 }
@@ -52,7 +56,9 @@ img{
 	<p>Your plant grows every day of the month when you don't use more electricity than your average.</p>
 </div>
 
+<div id="chart-wrapper">
 <div id="chart_div"></div>
+</div>
 
 <pre>{{r}}</pre>
 
