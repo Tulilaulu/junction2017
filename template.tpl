@@ -27,13 +27,17 @@ body, html{
   padding-top: 40px;
   text-align: center;
   color: #9fd79a;
-  height: 400px;
+  min-height: 400px;
   background-color: #eeffec;
   width: 100%;
   font-size: 3em;
+  padding-bottom: 10px;
 }
 .block2 p{
   font-size: 0.4em;
+}
+img{
+  cursor: pointer;
 }
 </style>
 </head>
@@ -50,13 +54,16 @@ body, html{
 </div>
 <pre>{{r}}</pre>
 <script>
-  i = 0;
+$(function() {
+  var i = 0;
   $('#kasvi').click(function(){
-    if (i > 10) {
+    i++;
+    if (i > 9) {
       i = 0;
     }
     $('#kasvi').attr('src', 'kasvi/'+i+'.png');
   });
+});
 </script>
 </body>
 </html>

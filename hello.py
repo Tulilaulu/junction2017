@@ -1,7 +1,11 @@
-from bottle import route, run, template
+from bottle import route, run, template, static_file
 from urllib2 import Request, urlopen, URLError
 import requests
 import json
+
+@route('/kasvi/<picture>')
+def serve_pictures(picture):
+    return static_file(picture, root='kasvi')
 
 @route('/')
 def index():
@@ -19,7 +23,3 @@ def index():
         print 'No kittez. Got an error code:', e
 
 run(host='localhost', port=8080)
-
-@route('/kasvi/<picture>')
-def serve_pictures(picture):
-    return static_file(picture, root='/kasvi/')
