@@ -61,13 +61,18 @@ $(function() {
     window.maxIndex = time_data_array.length - 1;
 
     // get previous 7 days from window.dateIndex
-    var rows = to_googlechart_fmt(time_data_array).slice(start_idx, end_idx);
+    var rows = to_googlechart_fmt(time_data_array).slice(start_idx+1, end_idx+1);
 
-    if (time_data_array[end_idx][1] < time_data_array[end_idx - 7][1]) {
-      console.log("better");
+    if (time_data_array[end_idx][1] <= time_data_array[end_idx - 7][1]) {
+      window.onBetter();
     } else {
-      console.log("worse");
+      window.onWorse();
     }
+
+    var prev_day_comparison = 100 * (1 - time_data_array[end_idx][1] / time_data_array[end_idx - 1][1]);
+
+    console.log(prev_day_comparison);
+
 
     // assemble data to gchart json format
     var cols = [

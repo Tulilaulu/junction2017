@@ -43,6 +43,9 @@ body, html{
   margin-left: 25%;
   width: 50%;
 }
+#kasvi {
+height: 200px;
+}
 img{
   cursor: pointer;
 }
@@ -105,6 +108,15 @@ $(function() {
       window.refresh_plot();
     }
   });
+
+  window.onBetter = function() {
+    console.log("Better!");
+  }
+
+  window.onWorse = function() {
+    console.log("Worse!");
+  }
+
 });
 </script>
 
