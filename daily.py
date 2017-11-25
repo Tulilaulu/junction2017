@@ -22,7 +22,7 @@ prev_ts = from_str(prev_ts)
 prev_power = float(prev_power)
 
 hour_start = prev_ts
-next_check = prev_ts + integ
+next_check = prev_ts.replace(day=prev_ts.day + 1, hour=0, minute=0, second=0)
 joules = 0
 
 print("datetime;p")
@@ -35,7 +35,7 @@ for line in data:
 
     if timestamp > next_check:
         #print((hour_start, joules))
-        print("%s ;%s" % (to_str(hour_start + half), joules / (timestamp - hour_start).total_seconds()))
+        print("%s ;%s" % (hour_start.replace(hour=0, minute=0, second=0), joules / (timestamp - hour_start).total_seconds()))
         hour_start = timestamp
         joules = 0
         next_check = hour_start + integ
