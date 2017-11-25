@@ -98,33 +98,33 @@ img{
 <div class="block2">
 	<div class="demo">
 	    <ul id="lightSlider">
-		<li data-thumb="kasvi/0.png" id="thismonth">
-		    <p>This months progress (22/25):</p>
-		    <img src="kasvi/0.png"/>
-		</li>
-		<li data-thumb="kasvi/1.png">
-                    <p>October (2/25)</p>
-		    <img src="kasvi/1.png"/>
-		</li>
-		<li data-thumb="kasvi/2.png">
-                    <p>September (15/25)</p>
-		    <img src="kasvi/2.png"/>
-		</li>
-		<li data-thumb="kasvi/3.png">
-                    <p>August (22/25)</p>
-		    <img src="kasvi/3.png"/>
-		</li>
-		<li data-thumb="kasvi/4.png">
-                    <p>July (22/25)</p>
-		    <img src="kasvi/4.png"/>
+		<li data-thumb="kasvi/6.png">
+                    <p>May (25/25)</p>
+		    <img src="kasvi/6.png"/>
 		</li>
 		<li data-thumb="kasvi/5.png">
                     <p>June (25/25)</p>
 		    <img src="kasvi/5.png"/>
 		</li>
-		<li data-thumb="kasvi/6.png">
-                    <p>May (25/25)</p>
-		    <img src="kasvi/6.png"/>
+		<li data-thumb="kasvi/4.png">
+                    <p>July (22/25)</p>
+		    <img src="kasvi/4.png"/>
+		</li>
+		<li data-thumb="kasvi/3.png">
+                    <p>August (22/25)</p>
+		    <img src="kasvi/3.png"/>
+		</li>
+		<li data-thumb="kasvi/2.png">
+                    <p>September (15/25)</p>
+		    <img src="kasvi/2.png"/>
+		</li>
+		<li data-thumb="kasvi/1.png">
+                    <p>October (2/25)</p>
+		    <img src="kasvi/1.png"/>
+		</li>
+		<li data-thumb="kasvi/0.png" id="thismonth">
+		    <p>This months progress (22/25):</p>
+		    <img src="kasvi/0.png"/>
 		</li>
 	    </ul>
 	</div>
