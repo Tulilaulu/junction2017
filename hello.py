@@ -37,8 +37,8 @@ def index(user):
     r = []
     for line in open('daily/%s.csv' % (user,)).readlines()[1:]:
         timestamp, power = line.split(' ;')
-        ds = int(time.mktime(from_str(timestamp).timetuple()))
-        r.append(['Date(%s)' % (ds, ), float(power)])
+        ds = from_str(timestamp)
+        r.append(['Date(%d, %d, %d)' % (ds.year, ds.month - 1, ds.day), float(power)])
     return {'data': r}
 
 @route('/avg/<city>')
@@ -51,7 +51,8 @@ def index(city):
                 r[timestamp].append(float(power))
 
     r2 = map(lambda x: [x[0], sum(x[1])/len(x[1])], r.iteritems())
-    return {'data': map(lambda x: ['Date(%s)' % (int(time.mktime(from_str(timestamp).timetuple())),), x[1]], r2)}
+    r2.sort()
+    return {'data': map(lambda x: ['Date(%d, %d, %d)' % (from_str(x[0]).year, from_str(x[0]).month - 1, from_str(x[0]).day), x[1]], r2)}
 
 
 run(host='localhost', port=8080)
