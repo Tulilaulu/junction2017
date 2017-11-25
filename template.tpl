@@ -63,8 +63,6 @@
         </center>
 </div>
 
-<!--<pre>{{r}}</pre>-->
-
 <div id="extra-wrapper">
 
   <div id="chart-wrapper">
