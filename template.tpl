@@ -21,29 +21,25 @@
 <div class="block2">
 	<div class="demo">
 	    <ul id="lightSlider">
-		<li data-thumb="kasvi/6.png">
-                    <p>May (25/25)</p>
-		    <img src="kasvi/6.png"/>
-		</li>
-		<li data-thumb="kasvi/5.png">
-                    <p>June (25/25)</p>
-		    <img src="kasvi/5.png"/>
+		<li data-thumb="kasvi/7.png">
+                    <p>June (17/25)</p>
+		    <img src="kasvi/7.png"/>
 		</li>
 		<li data-thumb="kasvi/4.png">
-                    <p>July (22/25)</p>
+                    <p>July (11/25)</p>
 		    <img src="kasvi/4.png"/>
 		</li>
-		<li data-thumb="kasvi/3.png">
-                    <p>August (22/25)</p>
-		    <img src="kasvi/3.png"/>
-		</li>
-		<li data-thumb="kasvi/2.png">
-                    <p>September (15/25)</p>
-		    <img src="kasvi/2.png"/>
+		<li data-thumb="kasvi/full2.png">
+                    <p>August (25/25)</p>
+		    <img src="kasvi/full2.png"/>
 		</li>
 		<li data-thumb="kasvi/1.png">
-                    <p>October (2/25)</p>
+                    <p>September (5/25)</p>
 		    <img src="kasvi/1.png"/>
+		</li>
+		<li data-thumb="kasvi/full1.png">
+                    <p>October (25/25)</p>
+		    <img src="kasvi/full1.png"/>
 		</li>
 		<li data-thumb="kasvi/0.png" id="thismonth">
 		    <img class="weatherStatus" src="kasvi/cloud.png"/>

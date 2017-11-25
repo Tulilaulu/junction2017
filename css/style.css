@@ -27,6 +27,9 @@ li p{
   font-size: 30px;
   z-index: 20;
 }
+.lSPager.lSGallery{
+margin: 0 auto;
+}
 #thismonth{
   position: relative;
 }
