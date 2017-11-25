@@ -50,7 +50,6 @@ def index(city):
         if d['city'] == city:
             for line in open('daily/%s.csv' % (d['location'],)).readlines()[1:]:
                 timestamp, power = line.split(' ;')
-                print((power, d['squaremeters']))
                 r1[timestamp].append(float(power))
                 r2[timestamp].append(float(power) / d['squaremeters'])
 
