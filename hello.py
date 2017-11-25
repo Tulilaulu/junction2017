@@ -1,7 +1,12 @@
 from bottle import route, run, template, static_file
+from datetime import datetime, timedelta
 from urllib2 import Request, urlopen, URLError
+import time
 import requests
 import json
+
+def from_str(s):
+    return datetime.strptime(s, '%Y-%m-%d %H:%M:%S')
 
 @route('/kasvi/<picture>')
 def serve_pictures(picture):
@@ -27,7 +32,8 @@ def index(user):
     r = []
     for line in open('daily/%s.csv' % (user,)).readlines()[1:]:
         timestamp, power = line.split(' ;')
-        r.append([timestamp, float(power)])
+        ds = int(time.mktime(from_str(timestamp).timetuple()))
+        r.append(['Date(%s)' % (ds, ), float(power)])
     return {'data': r}
 
 run(host='localhost', port=8080)
