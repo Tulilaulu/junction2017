@@ -3,20 +3,23 @@ from urllib2 import Request, urlopen, URLError
 import requests
 import json
 
-@route('/data/')
+@route('/')
 def index():
     data = {"password": "ratkaisutalkootapahtuma"}
     r = json.loads(requests.post('https://fortum.hackjunction.com/api/locations/', json=data).text)
-    print r
+    my_dict={}
     try:
-        for item in r:
-            print "Getting "+str(item['location'])
-            i = requests.post('https://fortum.hackjunction.com/api/locations/'+str(item['location']), json=data).text
-            r.append(i)
-            if (item['location'] > 3):
-                break
-        return template('<pre>{{r}}</pre>!', r=r)
+        print r
+#        print "Getting "+str(r[0]['location'])
+#        i = requests.post('https://fortum.hackjunction.com/api/locations/'+str(r[0]['location']), json=data).text
+#        r.append(i)
+        my_dict['r'] = r
+        return template('template.tpl', **my_dict)
     except URLError, e:
         print 'No kittez. Got an error code:', e
 
 run(host='localhost', port=8080)
+
+@route('/kasvi/<picture>')
+def serve_pictures(picture):
+    return static_file(picture, root='/kasvi/')
