@@ -34,12 +34,13 @@ def index():
 
 @route('/data/<user>')
 def index(user):
+    user = int(user)
     r = []
     for line in open('daily/%s.csv' % (user,)).readlines()[1:]:
         timestamp, power = line.split(' ;')
         ds = from_str(timestamp)
         r.append(['Date(%d, %d, %d)' % (ds.year, ds.month - 1, ds.day), float(power)])
-    return {'data': r}
+    return {'data': r, 'locationdata': filter(lambda x: x['location'] == user, json.load(open('locations.json')))[0]}
 
 @route('/avg/<city>')
 def index(city):
