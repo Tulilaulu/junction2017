@@ -44,7 +44,10 @@ body, html{
   width: 50%;
 }
 #kasvi {
-height: 200px;
+  height: 200px;
+}
+#extra-wrapper {
+  display: none;
 }
 img{
   cursor: pointer;
@@ -63,63 +66,22 @@ img{
 	<p>Your plant grows every day of the month when you don't use more electricity than your average.</p>
 </div>
 
-<div id="chart-wrapper">
-<div id="chart_div"></div>
+<div id="extra-wrapper">
+
+  <div id="chart-wrapper">
+  <div id="chart_div"></div>
+  </div>
+
+  <div id="debug-buttons">
+    <button type="button", id="debug_prev"> back </button>
+    <button type="button", id="debug_next"> fwd </button>
+  </div>
+
+  <pre>{{r}}</pre>
+
 </div>
 
-<div id="debug-buttons">
-  <button type="button", id="debug_prev"> back </button>
-  <button type="button", id="debug_next"> fwd </button>
-</div>
-
-<pre>{{r}}</pre>
-
-<script>
-$(function() {
-  var i = 0;
-  $('#kasvi').click(function(){
-    i++;
-    if (i > 9) {
-      i = 0;
-    }
-    $('#kasvi').attr('src', 'kasvi/'+i+'.png');
-  });
-});
-</script>
-
-<script>
-$(function() {
-  window.dateIndex = 8;
-
-  $('#debug_prev').click(function(){
-    window.dateIndex--;
-    if (window.dateIndex < 8) {
-      window.dateIndex = 8;
-    } else {
-      window.refresh_plot();
-    }
-  });
-
-  $('#debug_next').click(function(){
-    window.dateIndex++;
-    if (window.maxIndex < window.dateIndex) {
-      window.dateIndex = window.maxIndex;
-    } else {
-      window.refresh_plot();
-    }
-  });
-
-  window.onBetter = function() {
-    console.log("Better!");
-  }
-
-  window.onWorse = function() {
-    console.log("Worse!");
-  }
-
-});
-</script>
-
+<script src="js/events.js"></script>
 <script src="js/plot.js"></script>
 
 </body>
