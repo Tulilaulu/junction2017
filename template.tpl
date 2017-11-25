@@ -23,11 +23,9 @@ body, html{
   text-align: center;
   background-color: #9fd79a;
   color: white;
-  width: 100%;
   font-size: 3em;
 }
 .block2{
-  padding: 30px;
   text-align: center;
   color: #9fd79a;
   min-height: 400px;
@@ -109,21 +107,6 @@ img{
 		</li>
 		<li data-thumb="http://sachinchoolur.github.io/lightslider/img/thumb/cS-7.jpg">
 		    <img src="http://sachinchoolur.github.io/lightslider/img/cS-7.jpg" />
-		</li>
-		<li data-thumb="http://sachinchoolur.github.io/lightslider/img/thumb/cS-8.jpg">
-		    <img src="http://sachinchoolur.github.io/lightslider/img/cS-8.jpg" />
-		</li>
-		<li data-thumb="http://sachinchoolur.github.io/lightslider/img/thumb/cS-9.jpg">
-		    <img src="http://sachinchoolur.github.io/lightslider/img/cS-9.jpg" />
-		</li>
-		<li data-thumb="http://sachinchoolur.github.io/lightslider/img/thumb/cS-10.jpg">
-		    <img src="http://sachinchoolur.github.io/lightslider/img/cS-10.jpg" />
-		</li>
-		<li data-thumb="http://sachinchoolur.github.io/lightslider/img/thumb/cS-11.jpg">
-		    <img src="http://sachinchoolur.github.io/lightslider/img/cS-12.jpg" />
-		</li>
-		<li data-thumb="http://sachinchoolur.github.io/lightslider/img/thumb/cS-13.jpg">
-		    <img src="http://sachinchoolur.github.io/lightslider/img/cS-13.jpg" />
 		</li>
 	    </ul>
 	</div>
