@@ -10,7 +10,7 @@ $(function() {
   ls.goToSlide(7);
   var i = 0;
 
-  $('#thismonth').click(function(){
+  $('.lightSlider img').click(function(){
     /*
     i++;
     if (i > 9) {
