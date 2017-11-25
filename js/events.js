@@ -11,7 +11,7 @@ $(function() {
 
   window.plantStage = 0;
 
-  $('.lightSlider img').click(function(){
+  $('.lightSlider #thismonth').click(function(){
     /*
     i++;
     if (i > 9) {

@@ -30,6 +30,7 @@
 		    <img src="kasvi/4.png"/>
 		</li>
 		<li data-thumb="kasvi/full2.png">
+		    <a href="http://onetreeplanted.org" class="ribbon"><img src="kasvi/planted.png"/></a>
                     <p>August (25/25)</p>
 		    <img src="kasvi/full2.png"/>
 		</li>
@@ -38,6 +39,7 @@
 		    <img src="kasvi/1.png"/>
 		</li>
 		<li data-thumb="kasvi/full1.png">
+		    <a href="http://onetreeplanted.org" class="ribbon"><img src="kasvi/planted.png"/></a>
                     <p>October (25/25)</p>
 		    <img src="kasvi/full1.png"/>
 		</li>
