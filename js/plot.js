@@ -21,9 +21,9 @@ $(function() {
     }
 
     // gather all data into a map
-    var time_data_map = to_map(own_data.data, 0, 3, {});
-    time_data_map = to_map(region_data.data, 1, 3, time_data_map);
-    time_data_map = to_map(other_region_data.data, 2, 3, time_data_map);
+    var time_data_map = to_map(own_data.data, 0, 2, {});
+    time_data_map = to_map(region_data.data, 1, 2, time_data_map);
+    //time_data_map = to_map(other_region_data.data, 2, 3, time_data_map);
 
     //console.log(time_data_map);
 
@@ -84,8 +84,8 @@ $(function() {
     var cols = [
       {label: "X", type: "date"},
       {label: "My usage", type: "number"},
-      {label: "Espoo avg", type: "number"},
-      {label: "Vantaa avg", type: "number"}
+      {label: "Espoo avg", type: "number"}
+      //{label: "Vantaa avg", type: "number"}
     ];
 
     var data = new google.visualization.DataTable({
@@ -118,7 +118,7 @@ $(function() {
 */
 
     // find maximum power consumption value
-    maxPower = time_data_array.map(x => Math.max(x[1], x[2], x[3])).reduce((a,b) => Math.max(a, b));
+    maxPower = time_data_array.map(x => Math.max(x[1], x[2])).reduce((a,b) => Math.max(a, b));
     maxPower = 1000 * (((maxPower / 1000) | 0) + 1) // round up thousands
 
     var options = {
