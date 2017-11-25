@@ -141,7 +141,8 @@ $(function() {
       seriesType: 'bars',
       series: {1: {type: 'line'}},
       curveType: 'function',
-      intervals: { 'style' : 'area'}
+      intervals: { 'style' : 'area'},
+      legend : { position: 'top' }
     };
 
     var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));

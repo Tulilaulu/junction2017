@@ -20,7 +20,7 @@ $(function() {
     */
     //$('#extra-wrapper').slideToggle();
 
-    $("#extra-wrapper").slideDown(500);
+    $("#extra-wrapper").slideDown(500, window.refresh_plot);
     $('html, body').animate({
       scrollTop: $("#extra-wrapper").offset().top
     }, 500);
