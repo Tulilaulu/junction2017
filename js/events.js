@@ -65,8 +65,10 @@ $(function() {
   window.growPlant = function() {
     window.plantStage++;
     if (window.plantStage > 11) {
-      window.plantStage = 0;
+      window.plantStage = 11;
     }
+    $('.monthProgress').text((window.plantStage * 2 + 3)+"");
+    console.log(window.plantStage+"");
     $('#thismonth img').attr('src', 'kasvi/'+window.plantStage+'.png');
   }
 
@@ -75,6 +77,7 @@ $(function() {
     if (window.plantStage < 0) {
       window.plantStage = 0;
     }
+    $('.monthProgress').text((window.plantStage * 2 + 3)+"");
     $('#thismonth img').attr('src', 'kasvi/'+window.plantStage+'.png');
   }
 
@@ -100,5 +103,7 @@ $(function() {
     }
     e.preventDefault(); // prevent the default action (scroll / move caret)
   });
+
+  ungrowPlant();
 
 });

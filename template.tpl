@@ -46,7 +46,7 @@
 		    <img src="kasvi/1.png"/>
 		</li>
 		<li data-thumb="kasvi/0.png" id="thismonth">
-		    <p>This months progress (22/25):</p>
+		    <p>This months progress (<span class="monthProgress">22</span>/25):</p>
 		    <img src="kasvi/0.png"/>
 		</li>
 	    </ul>
