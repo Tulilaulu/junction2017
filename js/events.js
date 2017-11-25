@@ -8,7 +8,16 @@ $(function() {
 	    thumbItem: 9
 	});
   var i = 0;
-  $('#kasvi').click(function(){
+
+  $('#thismonth').click(function(){
+    /*
+    i++;
+    if (i > 9) {
+      i = 0;
+    }
+    $('#kasvi').attr('src', 'kasvi/'+i+'.png');
+    */
+    //$('#extra-wrapper').slideToggle();
 
     $("#extra-wrapper").slideDown(500);
     $('html, body').animate({

@@ -23,7 +23,7 @@ body, html{
   text-align: center;
   background-color: #9fd79a;
   color: white;
-  font-size: 3em;
+  font-size: 36px;
 }
 .block2{
   text-align: center;
@@ -31,11 +31,15 @@ body, html{
   min-height: 400px;
   background-color: #eeffec;
   width: 100%;
-  font-size: 3em;
-  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 30px;
 }
 .block2 p{
-  font-size: 0.4em;
+  font-size: 20px;
+  padding: 0px 20px;
+}
+li p{
+  font-size: 30px;
 }
 #chart-wrapper {
   margin-left: 25%;
@@ -55,7 +59,7 @@ body, html{
 ul {
     list-style: none outside none;
     padding-left: 0;
-    margin-bottom:0;
+    margin: 0 auto;
 }
 li {
     display: block;
@@ -77,6 +81,14 @@ img{
     max-width: 100%;
     margin: 0 auto;
 }
+.social-likes{
+  padding-top: 20px;
+}
+.social-likes div{
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
 </style>
 </head>
 <body>
@@ -84,29 +96,35 @@ img{
 	Grow your tree together with Fortum!
 </div>
 <div class="block2">
-	This months progress
 	<div class="demo">
 	    <ul id="lightSlider">
-		<li data-thumb="kasvi/0.png">
-		    <img src="kasvi/0.png" id="kasvi"/>
+		<li data-thumb="kasvi/0.png" id="thismonth">
+		    <p>This months progress (22/25):</p>
+		    <img src="kasvi/0.png"/>
 		</li>
-		<li data-thumb="http://sachinchoolur.github.io/lightslider/img/thumb/cS-2.jpg">
-		    <img src="http://sachinchoolur.github.io/lightslider/img/cS-2.jpg" />
+		<li data-thumb="kasvi/1.png">
+                    <p>Lokakuu (2/25)</p>
+		    <img src="kasvi/1.png"/>
 		</li>
-		<li data-thumb="http://sachinchoolur.github.io/lightslider/img/thumb/cS-3.jpg">
-		    <img src="http://sachinchoolur.github.io/lightslider/img/cS-3.jpg" />
+		<li data-thumb="kasvi/2.png">
+                    <p>Syyskuu (15/25)</p>
+		    <img src="kasvi/2.png"/>
 		</li>
-		<li data-thumb="http://sachinchoolur.github.io/lightslider/img/thumb/cS-4.jpg">
-		    <img src="http://sachinchoolur.github.io/lightslider/img/cS-4.jpg" />
+		<li data-thumb="kasvi/3.png">
+                    <p>Elokuu (22/25)</p>
+		    <img src="kasvi/3.png"/>
 		</li>
-		<li data-thumb="http://sachinchoolur.github.io/lightslider/img/thumb/cS-5.jpg">
-		    <img src="http://sachinchoolur.github.io/lightslider/img/cS-5.jpg" />
+		<li data-thumb="kasvi/4.png">
+                    <p>Heinäkuu (22/25)</p>
+		    <img src="kasvi/4.png"/>
 		</li>
-		<li data-thumb="http://sachinchoolur.github.io/lightslider/img/thumb/cS-6.jpg">
-		    <img src="http://sachinchoolur.github.io/lightslider/img/cS-6.jpg" />
+		<li data-thumb="kasvi/5.png">
+                    <p>Kesäkuu (25/25)</p>
+		    <img src="kasvi/5.png"/>
 		</li>
-		<li data-thumb="http://sachinchoolur.github.io/lightslider/img/thumb/cS-7.jpg">
-		    <img src="http://sachinchoolur.github.io/lightslider/img/cS-7.jpg" />
+		<li data-thumb="kasvi/6.png">
+                    <p>Toukokuu (25/25)</p>
+		    <img src="kasvi/6.png"/>
 		</li>
 	    </ul>
 	</div>
