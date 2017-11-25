@@ -39,6 +39,10 @@ body, html{
   margin-left: 25%;
   width: 50%;
 }
+#debug-buttons {
+  margin-left: 25%;
+  width: 50%;
+}
 img{
   cursor: pointer;
 }
@@ -60,6 +64,11 @@ img{
 <div id="chart_div"></div>
 </div>
 
+<div id="debug-buttons">
+  <button type="button", id="debug_prev"> back </button>
+  <button type="button", id="debug_next"> fwd </button>
+</div>
+
 <pre>{{r}}</pre>
 
 <script>
@@ -71,6 +80,30 @@ $(function() {
       i = 0;
     }
     $('#kasvi').attr('src', 'kasvi/'+i+'.png');
+  });
+});
+</script>
+
+<script>
+$(function() {
+  window.dateIndex = 8;
+
+  $('#debug_prev').click(function(){
+    window.dateIndex--;
+    if (window.dateIndex < 8) {
+      window.dateIndex = 8;
+    } else {
+      window.refresh_plot();
+    }
+  });
+
+  $('#debug_next').click(function(){
+    window.dateIndex++;
+    if (window.maxIndex < window.dateIndex) {
+      window.dateIndex = window.maxIndex;
+    } else {
+      window.refresh_plot();
+    }
   });
 });
 </script>

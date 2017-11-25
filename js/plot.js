@@ -14,6 +14,7 @@ $(function() {
       }, init);
     }
 
+    // gather all data into a map
     var time_data_map = to_map(own_data.data, 0, 3, {});
     time_data_map = to_map(region_data.data, 1, 3, time_data_map);
     time_data_map = to_map(other_region_data.data, 2, 3, time_data_map);
@@ -22,6 +23,7 @@ $(function() {
 
     //console.log(Object.keys(time_data_map));
 
+    // flatten { a : [1, 2, 3], ... } to { [a, 1, 2, 3], ... }
     function flatten(map) {
       return Object.keys(map).map(key => {
         map[key].unshift(key);
@@ -41,6 +43,7 @@ $(function() {
       });
     }
 */
+    // label columns and values
     function to_googlechart_fmt(a) {
       return a.map(x => {
         return { "c" : x.map(val => {
@@ -52,9 +55,21 @@ $(function() {
     //var zipped = zip_energy(own_data.data, region_data.data, other_region_data.data);
     //console.log(zipped);
 
-    var rows = to_googlechart_fmt(time_data_array).slice(-7);
-    //console.log(rows);
+    start_idx = window.dateIndex - 7;
+    end_idx = window.dateIndex;
 
+    window.maxIndex = time_data_array.length - 1;
+
+    // get previous 7 days from window.dateIndex
+    var rows = to_googlechart_fmt(time_data_array).slice(start_idx, end_idx);
+
+    if (time_data_array[end_idx][1] < time_data_array[end_idx - 7][1]) {
+      console.log("better");
+    } else {
+      console.log("worse");
+    }
+
+    // assemble data to gchart json format
     var cols = [
       {label: "X", type: "date"},
       {label: "My usage", type: "number"},
@@ -91,9 +106,14 @@ $(function() {
     var data = new google.visualization.DataTable(json_data);
 */
 
+    // find maximum power consumption value
+    maxPower = time_data_array.map(x => Math.max(x[1], x[2], x[3])).reduce((a,b) => Math.max(a, b));
+    maxPower = 1000 * (((maxPower / 1000) | 0) + 1) // round up thousands
+
     var options = {
       hAxis: { format: 'd/M/yy', title: 'Date' },
-      vAxis: { title: 'Power consumption' },
+      vAxis: { title: 'Power consumption',
+                viewWindow: {min: 0, max: maxPower}},
       colors: ['#00FF00', '#0000FF', '#FF0000'],
       width :800,
       height :600
@@ -121,5 +141,7 @@ $(function() {
       });
     });
   };
+
+  window.refresh_plot = make_plot;
 
 });
