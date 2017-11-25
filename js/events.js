@@ -8,7 +8,7 @@ $(function() {
 	    thumbItem: 9
 	});
   var i = 0;
-  $('#kasvi').click(function(){
+  $('#thismonth').click(function(){
     /*
     i++;
     if (i > 9) {
