@@ -43,16 +43,23 @@ def index(user):
 
 @route('/avg/<city>')
 def index(city):
-    r = defaultdict(lambda: [])
+    r1 = defaultdict(lambda: [])
+    r2 = defaultdict(lambda: [])
     for d in json.load(open('locations.json')):
         if d['city'] == city:
             for line in open('daily/%s.csv' % (d['location'],)).readlines()[1:]:
                 timestamp, power = line.split(' ;')
-                r[timestamp].append(float(power))
+                print((power, d['squaremeters']))
+                r1[timestamp].append(float(power))
+                r2[timestamp].append(float(power) / d['squaremeters'])
 
-    r2 = map(lambda x: [x[0], sum(x[1])/len(x[1])], r.iteritems())
-    r2.sort()
-    return {'data': map(lambda x: ['Date(%d, %d, %d)' % (from_str(x[0]).year, from_str(x[0]).month - 1, from_str(x[0]).day), x[1]], r2)}
+    res = []
+    for k in r1.iterkeys():
+        av1 = sum(r1[k])/len(r1[k])
+        av2 = sum(r2[k])/len(r2[k])
+        res.append([k, av1, av2])
+    res.sort()
+    return {'data': map(lambda x: ['Date(%d, %d, %d)' % (from_str(x[0]).year, from_str(x[0]).month - 1, from_str(x[0]).day), x[1], x[2]], res)}
 
 
 run(host='localhost', port=8080)
