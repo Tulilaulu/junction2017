@@ -46,8 +46,9 @@
 		    <img src="kasvi/1.png"/>
 		</li>
 		<li data-thumb="kasvi/0.png" id="thismonth">
+		    <img id="status" src="kasvi/cloud.png"/>
 		    <p>This months progress (22/25):</p>
-		    <img src="kasvi/0.png"/>
+		    <img id="thismonthplant" src="kasvi/0.png"/>
 		</li>
 	    </ul>
 	</div>
