@@ -1,4 +1,5 @@
 from bottle import route, run, template, static_file
+from collections import defaultdict
 from datetime import datetime, timedelta
 from urllib2 import Request, urlopen, URLError
 import time
@@ -39,5 +40,18 @@ def index(user):
         ds = int(time.mktime(from_str(timestamp).timetuple()))
         r.append(['Date(%s)' % (ds, ), float(power)])
     return {'data': r}
+
+@route('/avg/<city>')
+def index(city):
+    r = defaultdict(lambda: [])
+    for d in json.load(open('locations.json')):
+        if d['city'] == city:
+            for line in open('daily/%s.csv' % (d['location'],)).readlines()[1:]:
+                timestamp, power = line.split(' ;')
+                r[timestamp].append(float(power))
+
+    r2 = map(lambda x: [x[0], sum(x[1])/len(x[1])], r.iteritems())
+    return {'data': map(lambda x: ['Date(%s)' % (int(time.mktime(from_str(timestamp).timetuple())),), x[1]], r2)}
+
 
 run(host='localhost', port=8080)
