@@ -3,7 +3,7 @@ from urllib2 import Request, urlopen, URLError
 import requests
 import json
 
-@route('/data/')
+@route('/')
 def index():
     data = {"password": "ratkaisutalkootapahtuma"}
     r = json.loads(requests.post('https://fortum.hackjunction.com/api/locations/', json=data).text)
@@ -19,3 +19,7 @@ def index():
         print 'No kittez. Got an error code:', e
 
 run(host='localhost', port=8080)
+
+@route('/kasvi/<picture>')
+def serve_pictures(picture):
+    return static_file(picture, root='/kasvi/')
