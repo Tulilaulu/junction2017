@@ -65,7 +65,7 @@ $(function() {
     if (i > 9) {
       i = 0;
     }
-    $('#kasvi').attr('src', 'kasvi/'+i+'.png');
+    $('#thismonth img').attr('src', 'kasvi/'+i+'.png');
   }
 
   window.ungrowPlant = function() {
@@ -73,7 +73,7 @@ $(function() {
     if (i < 0) {
       i = 0;
     }
-    $('#kasvi').attr('src', 'kasvi/'+i+'.png');
+    $('#thismonth img').attr('src', 'kasvi/'+i+'.png');
   }
 
   window.onBetter = function() {
