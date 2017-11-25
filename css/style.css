@@ -75,3 +75,11 @@ img{
   -moz-border-radius: 2px;
   border-radius: 2px;
 }
+
+@media screen and (max-width: 700px){
+#chart-wrapper {
+  margin-left: 0;
+  width: 100%;
+}
+}
+
