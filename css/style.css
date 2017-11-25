@@ -28,7 +28,7 @@ li p{
   z-index: 20;
 }
 .lSPager.lSGallery{
-margin: 0 auto;
+margin: 0 auto!important;
 }
 #thismonth{
   position: relative;
