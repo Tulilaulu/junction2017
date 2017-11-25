@@ -26,10 +26,11 @@ body, html{
 li p{
   font-size: 30px;
 }
+
 #chart-wrapper {
-  margin-left: 25%;
-  width: 50%;
+  margin-left: 10%;
 }
+
 #debug-buttons {
   margin-left: 25%;
   width: 50%;

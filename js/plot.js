@@ -4,6 +4,8 @@ $(function() {
   google.charts.load('current', {packages: ['corechart', 'line']});
   google.charts.setOnLoadCallback(make_plot);
 
+  $(window).resize( make_plot );
+
   function drawLineColors(own_data, region_data, other_region_data) {
     var squaremeters = own_data.locationdata.squaremeters;
 
@@ -134,7 +136,7 @@ $(function() {
       vAxis: { title: 'Power consumption',
                 viewWindow: {min: 0, max: maxPower}},
       colors: ['#9fd79a', '#0000FF', '#FF0000'],
-      width :800,
+      width : Math.max(200, $(window).width() * 0.8),
       height :600,
       seriesType: 'bars',
       series: {1: {type: 'line'}},
