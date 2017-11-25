@@ -7,7 +7,7 @@ $(function() {
     slideMargin: 0,
     thumbItem: 9
   });
-  ls.goToSlide(7);
+  ls.goToSlide(6);
 
   window.plantStage = 0;
 

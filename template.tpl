@@ -43,7 +43,7 @@
 		</li>
 		<li data-thumb="kasvi/0.png" id="thismonth">
 		    <img class="weatherStatus" src="kasvi/cloud.png"/>
-		    <p>This months progress (<span class="monthProgress">22</span>/25):</p>
+		    <p>This month's progress (<span class="monthProgress">22</span>/25):</p>
 		    <img class="thismonthplant" src="kasvi/0.png"/>
 		</li>
 	    </ul>
