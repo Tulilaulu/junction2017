@@ -22,4 +22,12 @@ def index():
     except URLError, e:
         print 'No kittez. Got an error code:', e
 
+@route('/data/<user>')
+def index(user):
+    r = []
+    for line in open('daily/%s.csv' % (user,)).readlines()[1:]:
+        timestamp, power = line.split(' ;')
+        r.append([timestamp, float(power)])
+    return {'data': r}
+
 run(host='localhost', port=8080)
