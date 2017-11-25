@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<title>asdf</title>
+<title>Grow your tree with Fortum</title>
 <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-likes/dist/social-likes_flat.css">
 <script
@@ -65,7 +65,14 @@ li {
     margin-right: 6px;
     cursor:pointer;
 }
-img {
+
+#kasvi {
+  height: 200px;
+}
+#extra-wrapper {
+  display: none;
+}
+img{
   cursor: pointer;
     display: block;
     height: auto;
@@ -124,67 +131,27 @@ img {
 	<p>Your plant grows every day of the month when you don't use more electricity than your average.</p>
 </div>
 
-<div id="chart-wrapper">
-<div id="chart_div"></div>
-</div>
-
-<div id="debug-buttons">
-  <button type="button", id="debug_prev"> back </button>
-  <button type="button", id="debug_next"> fwd </button>
-</div>
-
 <!--<pre>{{r}}</pre>-->
 <div class="social-likes">
-	<div class="facebook" title="Share link on Facebook">Facebook</div>
-	<div class="twitter" title="Share link on Twitter">Twitter</div>
-	<div class="plusone" title="Share link on Google+">Google+</div>
+  <div class="facebook" title="Share link on Facebook">Facebook</div>
+  <div class="twitter" title="Share link on Twitter">Twitter</div>
+  <div class="plusone" title="Share link on Google+">Google+</div>
 </div>
-<script>
-$(function() {
-  var i = 0;
-  $('#kasvi').click(function(){
-    i++;
-    if (i > 9) {
-      i = 0;
-    }
-    $('#kasvi').attr('src', 'kasvi/'+i+'.png');
-  });
-});
-</script>
 
-<script>
-$(function() {
-  window.dateIndex = 8;
+<div id="extra-wrapper">
 
-  $('#debug_prev').click(function(){
-    window.dateIndex--;
-    if (window.dateIndex < 8) {
-      window.dateIndex = 8;
-    } else {
-      window.refresh_plot();
-    }
-  });
+  <div id="chart-wrapper">
+  <div id="chart_div"></div>
+  </div>
 
-  $('#debug_next').click(function(){
-    window.dateIndex++;
-    if (window.maxIndex < window.dateIndex) {
-      window.dateIndex = window.maxIndex;
-    } else {
-      window.refresh_plot();
-    }
-  });
+  <div id="debug-buttons">
+    <button type="button", id="debug_prev"> back </button>
+    <button type="button", id="debug_next"> fwd </button>
+  </div>
 
-	$('#lightSlider').lightSlider({
-	    gallery: true,
-	    item: 1,
-	    loop: true,
-	    slideMargin: 0,
-	    thumbItem: 9
-	});
-});
+</div>
 
-</script>
-
+<script src="js/events.js"></script>
 <script src="js/plot.js"></script>
 
 </body>
