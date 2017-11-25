@@ -3,10 +3,13 @@
 <head>
 <title>asdf</title>
 <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-likes/dist/social-likes_flat.css">
 <script
 	src="https://code.jquery.com/jquery-3.2.1.min.js">
 </script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/social-likes/dist/social-likes.min.js"></script>
 <style>
 body, html{
   margin: 0px;
@@ -67,6 +70,12 @@ img{
 <div id="debug-buttons">
   <button type="button", id="debug_prev"> back </button>
   <button type="button", id="debug_next"> fwd </button>
+</div>
+
+<div class="social-likes">
+	<div class="facebook" title="Share link on Facebook">Facebook</div>
+	<div class="twitter" title="Share link on Twitter">Twitter</div>
+	<div class="plusone" title="Share link on Google+">Google+</div>
 </div>
 
 <pre>{{r}}</pre>
