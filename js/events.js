@@ -8,7 +8,8 @@ $(function() {
     thumbItem: 9
   });
   ls.goToSlide(7);
-  var i = 0;
+
+  window.plantStage = 0;
 
   $('.lightSlider img').click(function(){
     /*
@@ -62,19 +63,19 @@ $(function() {
   }
 
   window.growPlant = function() {
-    i++;
-    if (i > 11) {
-      i = 0;
+    window.plantStage++;
+    if (window.plantStage > 11) {
+      window.plantStage = 0;
     }
-    $('#thismonth img').attr('src', 'kasvi/'+i+'.png');
+    $('#thismonth img').attr('src', 'kasvi/'+window.plantStage+'.png');
   }
 
   window.ungrowPlant = function() {
-    i--;
-    if (i < 0) {
-      i = 0;
+    window.plantStage--;
+    if (window.plantStage < 0) {
+      window.plantStage = 0;
     }
-    $('#thismonth img').attr('src', 'kasvi/'+i+'.png');
+    $('#thismonth img').attr('src', 'kasvi/'+window.plantStage+'.png');
   }
 
   window.onBetter = function() {
