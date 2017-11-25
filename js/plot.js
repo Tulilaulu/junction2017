@@ -66,6 +66,10 @@ $(function() {
 
     window.maxIndex = time_data_array.length - 1;
 
+    time_data_array = time_data_array.map(x => {
+      return x.concat([x[2]*0.9, x[2]*1.1]);
+    })
+
     // get previous 7 days from window.dateIndex
     var rows = to_googlechart_fmt(time_data_array).slice(start_idx+1, end_idx+1);
 
@@ -75,17 +79,21 @@ $(function() {
       window.onWorse();
     }
 
+
     var prev_day_comparison = 100 * (1 - time_data_array[end_idx][1] / time_data_array[end_idx - 1][1]);
 
     console.log(prev_day_comparison);
 
+    console.log(time_data_array);
 
     // assemble data to gchart json format
     var cols = [
       {label: "X", type: "date"},
       {label: "My usage", type: "number"},
-      {label: "Espoo avg", type: "number"}
+      {label: "Espoo avg", type: "number"},
       //{label: "Vantaa avg", type: "number"}
+      {label: "", type: "number", role: "interval"},
+      {label: "", type: "number", role: "interval"}
     ];
 
     var data = new google.visualization.DataTable({
@@ -119,15 +127,19 @@ $(function() {
 
     // find maximum power consumption value
     maxPower = time_data_array.map(x => Math.max(x[1], x[2])).reduce((a,b) => Math.max(a, b));
-    maxPower = 1000 * (((maxPower / 1000) | 0) + 1) // round up thousands
+    maxPower = 1000 * (((maxPower / 1000) | 0) + 2) // round up thousands
 
     var options = {
       hAxis: { format: 'd/M/yy', title: 'Date' },
       vAxis: { title: 'Power consumption',
                 viewWindow: {min: 0, max: maxPower}},
-      colors: ['#00FF00', '#0000FF', '#FF0000'],
+      colors: ['#9fd79a', '#0000FF', '#FF0000'],
       width :800,
-      height :600
+      height :600,
+      seriesType: 'bars',
+      series: {1: {type: 'line'}},
+      curveType: 'function',
+      intervals: { 'style' : 'area'}
     };
 
     var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
