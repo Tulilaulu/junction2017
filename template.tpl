@@ -54,6 +54,7 @@
 	<p>Use energy more efficiently than your community and grow your tree.</p>
 
 	<center>
+            <span>Share your progress on social media!</span>
             <div class="social-likes">
                 <div class="facebook" title="Share link on Facebook">Facebook</div>
                 <div class="twitter" title="Share link on Twitter">Twitter</div>

@@ -6,13 +6,13 @@ body, html{
 .block1{
   padding: 20px;
   text-align: center;
-  background-color: #9fd79a;
+  background-color: #87ca81;
   color: white;
   font-size: 36px;
 }
 .block2{
   text-align: center;
-  color: #9fd79a;
+  color: #87ca81;
   min-height: 400px;
   background-color: #eeffec;
   width: 100%;
