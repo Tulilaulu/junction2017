@@ -18,7 +18,7 @@ $(function() {
     */
     //$('#extra-wrapper').slideToggle();
 
-    $("#extra-wrapper").slideToggle(500);
+    $("#extra-wrapper").slideDown(500);
     $('html, body').animate({
       scrollTop: $("#extra-wrapper").offset().top
     }, 500);
