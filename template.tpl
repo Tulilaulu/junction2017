@@ -3,10 +3,13 @@
 <head>
 <title>asdf</title>
 <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-likes/dist/social-likes_flat.css">
 <script
 	src="https://code.jquery.com/jquery-3.2.1.min.js">
 </script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/social-likes/dist/social-likes.min.js"></script>
 <style>
 body, html{
   margin: 0px;
@@ -14,11 +17,10 @@ body, html{
   font-family: 'Oswald', sans-serif;
 }
 .block1{
-  padding-top: 80px;
+  padding: 20px;
   text-align: center;
   background-color: #9fd79a;
   color: white;
-  height: 360px;
   width: 100%;
   font-size: 3em;
 }
@@ -56,14 +58,20 @@ img{
 </head>
 <body>
 <div class="block1">
-	Your consuption compared to yesterday
-	<h2>-5%</h2>
+	Grow your tree!
 </div>
 <div class="block2">
 	This months progress
 	<br/>
 	<img src="kasvi/0.png" id="kasvi"/>
 	<p>Your plant grows every day of the month when you don't use more electricity than your average.</p>
+</div>
+
+<!--<pre>{{r}}</pre>-->
+<div class="social-likes">
+  <div class="facebook" title="Share link on Facebook">Facebook</div>
+  <div class="twitter" title="Share link on Twitter">Twitter</div>
+  <div class="plusone" title="Share link on Google+">Google+</div>
 </div>
 
 <div id="extra-wrapper">
@@ -76,8 +84,6 @@ img{
     <button type="button", id="debug_prev"> back </button>
     <button type="button", id="debug_next"> fwd </button>
   </div>
-
-  <pre>{{r}}</pre>
 
 </div>
 
