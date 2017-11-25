@@ -112,14 +112,17 @@ img{
 	</div>
 
 	<p>Your plant grows every day of the month when you don't use more electricity than your average.</p>
+
+	<center>
+            <div class="social-likes">
+                <div class="facebook" title="Share link on Facebook">Facebook</div>
+                <div class="twitter" title="Share link on Twitter">Twitter</div>
+                <div class="plusone" title="Share link on Google+">Google+</div>
+            </div>
+        </center>
 </div>
 
 <!--<pre>{{r}}</pre>-->
-<div class="social-likes">
-  <div class="facebook" title="Share link on Facebook">Facebook</div>
-  <div class="twitter" title="Share link on Twitter">Twitter</div>
-  <div class="plusone" title="Share link on Google+">Google+</div>
-</div>
 
 <div id="extra-wrapper">
 
