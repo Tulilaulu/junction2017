@@ -4,6 +4,35 @@ $(function() {
 
   function drawLineColors(own_data, region_data, other_region_data) {
 
+    function to_map(a, i, n, init) {
+      return a.reduce(function(map, obj) {
+        if ( ! (obj[0] in map) ) {
+          map[obj[0]] = new Array(n);
+        }
+        map[obj[0]][i] = obj[1];
+        return map;
+      }, init);
+    }
+
+    var time_data_map = to_map(own_data.data, 0, 3, {});
+    time_data_map = to_map(region_data.data, 1, 3, time_data_map);
+    time_data_map = to_map(other_region_data.data, 2, 3, time_data_map);
+
+    //console.log(time_data_map);
+
+    //console.log(Object.keys(time_data_map));
+
+    function flatten(map) {
+      return Object.keys(map).map(key => {
+        map[key].unshift(key);
+        return map[key];
+      });
+    }
+
+    time_data_array = flatten(time_data_map);
+
+    //console.log(flatten(time_data_map));
+/*
     function zip_energy(a, b, c) {
       return a.map(function(e, i) {
         var bv = i < b.length ? b[i][1] : "";
@@ -11,7 +40,7 @@ $(function() {
         return [e[0], e[1], bv, cv];
       });
     }
-
+*/
     function to_googlechart_fmt(a) {
       return a.map(x => {
         return { "c" : x.map(val => {
@@ -20,10 +49,10 @@ $(function() {
       )}});
     }
 
-    var zipped = zip_energy(own_data.data, region_data.data, other_region_data.data);
+    //var zipped = zip_energy(own_data.data, region_data.data, other_region_data.data);
     //console.log(zipped);
 
-    var rows = to_googlechart_fmt(zipped).slice(-7);
+    var rows = to_googlechart_fmt(time_data_array).slice(-7);
     //console.log(rows);
 
     var cols = [
