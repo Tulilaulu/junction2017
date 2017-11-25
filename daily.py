@@ -14,12 +14,17 @@ fname = sys.argv[1]
 
 data = open(fname).readlines()[1:]
 
-line = data[0]
-data = data[1:]
+# ugly hack
+while True:
+    line = data[0]
+    data = data[1:]
 
-prev_ts, prev_power = line.split(' ;')
-prev_ts = from_str(prev_ts)
-prev_power = float(prev_power)
+    prev_ts, prev_power = line.split(' ;')
+    prev_ts = from_str(prev_ts)
+    prev_power = float(prev_power)
+
+    if prev_power < 20000:
+        break
 
 hour_start = prev_ts
 next_check = prev_ts.replace(day=prev_ts.day + 1, hour=0, minute=0, second=0)
@@ -30,6 +35,9 @@ for line in data:
     timestamp, power = line.split(' ;')
     timestamp = from_str(timestamp)
     power = float(power)
+
+    if power > 20000:
+        continue
 
     joules += prev_power * (timestamp - prev_ts).total_seconds()
 
