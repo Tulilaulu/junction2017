@@ -14,11 +14,10 @@ body, html{
   font-family: 'Oswald', sans-serif;
 }
 .block1{
-  padding-top: 80px;
+  padding: 20px;
   text-align: center;
   background-color: #9fd79a;
   color: white;
-  height: 360px;
   width: 100%;
   font-size: 3em;
 }
@@ -50,8 +49,7 @@ img{
 </head>
 <body>
 <div class="block1">
-	Your consuption compared to yesterday
-	<h2>-5%</h2>
+	Grow your tree!
 </div>
 <div class="block2">
 	This months progress
@@ -69,7 +67,7 @@ img{
   <button type="button", id="debug_next"> fwd </button>
 </div>
 
-<pre>{{r}}</pre>
+<!--<pre>{{r}}</pre>-->
 
 <script>
 $(function() {
