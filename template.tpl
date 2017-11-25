@@ -49,7 +49,12 @@ li p{
   margin-left: 25%;
   width: 50%;
 }
-
+@media screen and (max-width: 700px){
+#chart-wrapper {
+  margin-left: 0;
+  width: 100%;
+}
+}
 .demo {
     max-width:420px;
     width: 100%;
