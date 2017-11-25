@@ -53,7 +53,7 @@
 	    </ul>
 	</div>
 
-	<p>Your plant grows every day of the month when you don't use more electricity than your average.</p>
+	<p>Use energy more efficiently than your community and grow your tree.</p>
 
 	<center>
             <div class="social-likes">
