@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta
 import sys
+import json
 
 integ = timedelta(minutes=10)
 half = integ / 2
@@ -10,7 +11,8 @@ def from_str(s):
 def to_str(ts):
     return ts.strftime('%Y-%m-%d %H:%M:%S')
 
-fname = sys.argv[1]
+dude = int(sys.argv[1])
+fname = "data/%s.csv" % (dude, )
 
 data = open(fname).readlines()[1:]
 
@@ -25,6 +27,10 @@ hour_start = prev_ts
 next_check = prev_ts + integ
 joules = 0
 
+locdata = filter(lambda x: x['location'] == dude, json.load(open('locations.json')))[0]
+
+
+
 for line in data:
     timestamp, power = line.split(' ;')
     timestamp = from_str(timestamp)
@@ -34,4 +40,9 @@ for line in data:
 
     prev_ts, prev_power = timestamp, power
 
-print(joules / (60*60) / 1000)
+kwh = joules / (60*60) / 1000
+locdata['kwh'] = kwh
+
+for k in ['location', 'zipcode', 'amountofinhabitants', 'squaremeters', 'cubicmeters', 'electricityheatingsurface', 'buildingyear', 'buildingtype_id', 'primaryheatingtype_id', 'secondaryheatingtype_id', 'kwh']:
+    print str(locdata[k]) + "\t",
+print
