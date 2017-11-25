@@ -1,12 +1,13 @@
 
 $(function() {
-	$('#lightSlider').lightSlider({
-	    gallery: true,
-	    item: 1,
-	    loop: true,
-	    slideMargin: 0,
-	    thumbItem: 9
-	});
+  var ls = $('#lightSlider').lightSlider({
+    gallery: true,
+    item: 1,
+    loop: true,
+    slideMargin: 0,
+    thumbItem: 9
+  });
+  ls.goToSlide(7);
   var i = 0;
 
   $('#thismonth').click(function(){
