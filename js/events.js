@@ -63,7 +63,7 @@ $(function() {
 
   window.growPlant = function() {
     i++;
-    if (i > 9) {
+    if (i > 11) {
       i = 0;
     }
     $('#thismonth img').attr('src', 'kasvi/'+i+'.png');
