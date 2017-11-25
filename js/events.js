@@ -1,15 +1,16 @@
 
 $(function() {
-	$('#lightSlider').lightSlider({
-	    gallery: true,
-	    item: 1,
-	    loop: true,
-	    slideMargin: 0,
-	    thumbItem: 9
-	});
+  var ls = $('#lightSlider').lightSlider({
+    gallery: true,
+    item: 1,
+    loop: true,
+    slideMargin: 0,
+    thumbItem: 9
+  });
+  ls.goToSlide(7);
   var i = 0;
 
-  $('#thismonth').click(function(){
+  $('.lightSlider img').click(function(){
     /*
     i++;
     if (i > 9) {
@@ -65,7 +66,7 @@ $(function() {
     if (i > 9) {
       i = 0;
     }
-    $('#kasvi').attr('src', 'kasvi/'+i+'.png');
+    $('#thismonth img').attr('src', 'kasvi/'+i+'.png');
   }
 
   window.ungrowPlant = function() {
@@ -73,7 +74,7 @@ $(function() {
     if (i < 0) {
       i = 0;
     }
-    $('#kasvi').attr('src', 'kasvi/'+i+'.png');
+    $('#thismonth img').attr('src', 'kasvi/'+i+'.png');
   }
 
   window.onBetter = function() {

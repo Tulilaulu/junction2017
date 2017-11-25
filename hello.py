@@ -21,6 +21,10 @@ def serve_pictures(picture):
 def serve_jaesae(script):
     return static_file(script, root='js')
 
+@route('/css/<style>')
+def serve_jaesae(style):
+    return static_file(style, root='css')
+
 @route('/')
 def index():
     data = {"password": "ratkaisutalkootapahtuma"}
