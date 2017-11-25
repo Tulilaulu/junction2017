@@ -2,12 +2,11 @@
 <html>
 <head>
 <title>asdf</title>
-<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 <script
-	src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-	integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
-	crossorigin="anonymous"></script>
-
+	src="https://code.jquery.com/jquery-3.2.1.min.js">
+</script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <style>
 body, html{
   margin: 0px;
@@ -52,7 +51,11 @@ img{
 	<img src="kasvi/0.png" id="kasvi"/>
 	<p>Your plant grows every day of the month when you don't use more electricity than your average.</p>
 </div>
+
+<div id="chart_div"></div>
+
 <pre>{{r}}</pre>
+
 <script>
 $(function() {
   var i = 0;
@@ -65,5 +68,8 @@ $(function() {
   });
 });
 </script>
+
+<script src="js/plot.js"></script>
+
 </body>
 </html>

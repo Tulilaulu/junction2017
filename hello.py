@@ -12,6 +12,10 @@ def from_str(s):
 def serve_pictures(picture):
     return static_file(picture, root='kasvi')
 
+@route('/js/<script>')
+def serve_jaesae(script):
+    return static_file(script, root='js')
+
 @route('/')
 def index():
     data = {"password": "ratkaisutalkootapahtuma"}
