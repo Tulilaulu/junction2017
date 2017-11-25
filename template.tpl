@@ -147,7 +147,7 @@ img{
   <div id="chart_div"></div>
   </div>
 
-  <div id="debug-buttons">
+  <div id="debug-buttons", style="display: none">
     <button type="button", id="debug_prev"> back </button>
     <button type="button", id="debug_next"> fwd </button>
   </div>

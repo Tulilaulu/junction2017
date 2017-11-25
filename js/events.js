@@ -9,14 +9,6 @@ $(function() {
 	});
   var i = 0;
   $('#kasvi').click(function(){
-    /*
-    i++;
-    if (i > 9) {
-      i = 0;
-    }
-    $('#kasvi').attr('src', 'kasvi/'+i+'.png');
-    */
-    //$('#extra-wrapper').slideToggle();
 
     $("#extra-wrapper").slideDown(500);
     $('html, body').animate({
@@ -27,6 +19,7 @@ $(function() {
 
   window.dateIndex = 8;
 
+/*
   $('#debug_prev').click(function(){
     window.prevDay();
   });
@@ -34,6 +27,7 @@ $(function() {
   $('#debug_next').click(function(){
     window.nextDay();
   });
+*/
 
   window.nextDay = function() {
     window.dateIndex++;
@@ -41,6 +35,8 @@ $(function() {
       window.dateIndex = window.maxIndex;
     } else {
       window.refresh_plot();
+
+      growPlant();
     }
   }
 
@@ -50,7 +46,25 @@ $(function() {
       window.dateIndex = 8;
     } else {
       window.refresh_plot();
+
+      ungrowPlant();
     }
+  }
+
+  window.growPlant = function() {
+    i++;
+    if (i > 9) {
+      i = 0;
+    }
+    $('#kasvi').attr('src', 'kasvi/'+i+'.png');
+  }
+
+  window.ungrowPlant = function() {
+    i--;
+    if (i < 0) {
+      i = 0;
+    }
+    $('#kasvi').attr('src', 'kasvi/'+i+'.png');
   }
 
   window.onBetter = function() {
