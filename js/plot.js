@@ -1,15 +1,21 @@
 $(function() {
+  var normalize = false;
+
   google.charts.load('current', {packages: ['corechart', 'line']});
   google.charts.setOnLoadCallback(make_plot);
 
   function drawLineColors(own_data, region_data, other_region_data) {
+    var squaremeters = own_data.locationdata.squaremeters;
 
     function to_map(a, i, n, init) {
       return a.reduce(function(map, obj) {
         if ( ! (obj[0] in map) ) {
           map[obj[0]] = new Array(n);
         }
-        map[obj[0]][i] = obj[1];
+        if (normalize && obj.length == 3)
+          map[obj[0]][i] = squaremeters * obj[2];
+        else
+          map[obj[0]][i] = obj[1];
         return map;
       }, init);
     }
