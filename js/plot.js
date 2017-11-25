@@ -38,14 +38,21 @@ $(function() {
 
     var zipped = zip_energy(own_data.data, region_data.data);
 
-    console.log(zipped);
+    //console.log(zipped);
 
-    var rows = to_googlechart_fmt(zipped);
+    var rows = to_googlechart_fmt(zipped).slice(-7);
 
-    console.log(rows);
+
+
+    //console.log(rows);
 
     var cols = [ {label: "X", type: "date"}, {label: "My usage", type: "number"}, {label: "ESPOO", type: "number"}]
+
+
 /*
+
+    // GOOGLE JSON FORMAT EXAMPLE
+
     var json_data = {
       "cols": [
             {"label":"X",         "type":"date"},
@@ -84,7 +91,7 @@ $(function() {
       'height':600
     };
 
-    var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+    var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
     chart.draw(data, options);
   };
 
