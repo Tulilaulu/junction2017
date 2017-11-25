@@ -2,8 +2,8 @@ $(function() {
   google.charts.load('current', {packages: ['corechart', 'line']});
   google.charts.setOnLoadCallback(make_plot);
 
-  function drawLineColors(api_json) {
-    var data = new google.visualization.DataTable();
+  function drawLineColors(own_data, region_data) {
+
 /*
     data.addColumn('date', 'X');
     data.addColumn('number', 'Oma');
@@ -20,16 +20,31 @@ $(function() {
       [new Date(2017, 1, 7), 11, 3, 4]
     ]);
 */
-    console.log(api_json.data);
+    console.log(region_data.data);
 
-    var rows = api_json.data.map(x => {
-        return { "c" : x.map(v => {
-          return { "v" : v }
+    function zip_energy(a, b) {
+      return a.map(function(e, i) {
+        return [e[0], e[1], b[i][1]];
+      });
+    }
+
+    function to_googlechart_fmt(a) {
+      return a.map(x => {
+        return { "c" : x.map(val => {
+          return { "v" : val }
         }
-      )}
-    });
+      )}});
+    }
 
-    var cols = [ {label: "X", type: "date"}, {label: "Oma", type: "number"}]
+    var zipped = zip_energy(own_data.data, region_data.data);
+
+    console.log(zipped);
+
+    var rows = to_googlechart_fmt(zipped);
+
+    console.log(rows);
+
+    var cols = [ {label: "X", type: "date"}, {label: "My usage", type: "number"}, {label: "ESPOO", type: "number"}]
 /*
     var json_data = {
       "cols": [
@@ -64,7 +79,7 @@ $(function() {
       vAxis: {
         title: 'Power consumption'
       },
-      colors: ['#000099', '#0000FF', '#BB0000'],
+      colors: ['#00FF00', '#0000FF', '#FF0000'],
       'width':800,
       'height':600
     };
@@ -75,10 +90,15 @@ $(function() {
 
   function make_plot() {
     $.ajax({
-      url: "data/1",
+      url: "data/10",
       context: document.body
-    }).done(function(res) {
-      drawLineColors(res);
+    }).done(function(own_data) {
+      $.ajax({
+        url: "avg/ESPOO",
+        context: document.body
+      }).done(function(espoo_data) {
+        drawLineColors(own_data, espoo_data);
+      });
     });
   };
 
