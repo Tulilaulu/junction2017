@@ -103,27 +103,27 @@ img{
 		    <img src="kasvi/0.png"/>
 		</li>
 		<li data-thumb="kasvi/1.png">
-                    <p>Lokakuu (2/25)</p>
+                    <p>October (2/25)</p>
 		    <img src="kasvi/1.png"/>
 		</li>
 		<li data-thumb="kasvi/2.png">
-                    <p>Syyskuu (15/25)</p>
+                    <p>September (15/25)</p>
 		    <img src="kasvi/2.png"/>
 		</li>
 		<li data-thumb="kasvi/3.png">
-                    <p>Elokuu (22/25)</p>
+                    <p>August (22/25)</p>
 		    <img src="kasvi/3.png"/>
 		</li>
 		<li data-thumb="kasvi/4.png">
-                    <p>Heinäkuu (22/25)</p>
+                    <p>July (22/25)</p>
 		    <img src="kasvi/4.png"/>
 		</li>
 		<li data-thumb="kasvi/5.png">
-                    <p>Kesäkuu (25/25)</p>
+                    <p>June (25/25)</p>
 		    <img src="kasvi/5.png"/>
 		</li>
 		<li data-thumb="kasvi/6.png">
-                    <p>Toukokuu (25/25)</p>
+                    <p>May (25/25)</p>
 		    <img src="kasvi/6.png"/>
 		</li>
 	    </ul>
