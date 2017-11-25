@@ -9,6 +9,10 @@ import json
 def from_str(s):
     return datetime.strptime(s, '%Y-%m-%d %H:%M:%S')
 
+@route('/img/<picture>')
+def serve_pictures(picture):
+    return static_file(picture, root='img')
+
 @route('/kasvi/<picture>')
 def serve_pictures(picture):
     return static_file(picture, root='kasvi')
@@ -62,4 +66,4 @@ def index(city):
     return {'data': map(lambda x: ['Date(%d, %d, %d)' % (from_str(x[0]).year, from_str(x[0]).month - 1, from_str(x[0]).day), x[1], x[2]], res)}
 
 
-run(host='localhost', port=8080)
+run(host='0.0.0.0', port=8080)
