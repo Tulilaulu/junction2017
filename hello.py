@@ -9,6 +9,10 @@ import json
 def from_str(s):
     return datetime.strptime(s, '%Y-%m-%d %H:%M:%S')
 
+@route('/img/<picture>')
+def serve_pictures(picture):
+    return static_file(picture, root='img')
+
 @route('/kasvi/<picture>')
 def serve_pictures(picture):
     return static_file(picture, root='kasvi')
