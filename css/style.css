@@ -30,14 +30,14 @@ li p{
 #thismonth{
   position: relative;
 }
-#status{
+.weatherStatus{
   position: absolute;
   width: 230px;
   top: 55px;
   left: 0px;
   z-index: 1;
 }
-#thismonthplant{
+.thismonthplant{
   z-index: 100;
 }
 #chart-wrapper {

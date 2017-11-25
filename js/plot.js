@@ -84,10 +84,6 @@ $(function() {
 
     var prev_day_comparison = 100 * (1 - time_data_array[end_idx][1] / time_data_array[end_idx - 1][1]);
 
-    console.log(prev_day_comparison);
-
-    console.log(time_data_array);
-
     // assemble data to gchart json format
     var cols = [
       {label: "X", type: "date"},

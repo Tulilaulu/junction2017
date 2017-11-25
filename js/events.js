@@ -40,6 +40,16 @@ $(function() {
   });
 */
 
+  var makeWeather = function() {
+    if (Math.random() > 0.5) {
+      window.isSunny = true;
+      $(".weatherStatus").attr('src', "kasvi/sun.png");
+    } else {
+      window.isSunny = false;
+      $(".weatherStatus").attr('src', "kasvi/cloud.png");
+    }
+  }
+
   window.nextDay = function() {
     window.dateIndex++;
     if (window.maxIndex < window.dateIndex) {
@@ -47,7 +57,10 @@ $(function() {
     } else {
       window.refresh_plot();
 
-      growPlant();
+      if (window.isSunny === true)
+        growPlant();
+
+      makeWeather();
     }
   }
 
@@ -59,6 +72,8 @@ $(function() {
       window.refresh_plot();
 
       ungrowPlant();
+
+      makeWeather();
     }
   }
 
@@ -81,7 +96,6 @@ $(function() {
     $('.monthProgress').text((window.plantStage * 2 + 3)+"");
     $('.thismonthplant').attr('src', 'kasvi/'+window.plantStage+'.png');
 
-    console.log('kasvi/'+window.plantStage+'.png');
   }
 
   window.onBetter = function() {
