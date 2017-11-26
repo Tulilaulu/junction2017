@@ -11,10 +11,15 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/social-likes/dist/social-likes.min.js"></script>
 <link type="text/css" rel="stylesheet" href="css/lightslider.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="js/lightslider.js"></script>
 <link type="text/css" rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<div class="block0">
+<span class="fa fa-envelope"></span>  <img src="kasvi/fortum_logo_CMYK_EPS.JPG"/>
+<span class="fa fa-user"></span>
+</div>
 <div class="block1">
 	Grow your tree together with Fortum!
 </div>

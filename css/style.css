@@ -3,6 +3,30 @@ body, html{
   padding: 0px;
   font-family: 'Oswald', sans-serif;
 }
+.block0{
+  background-color: white;
+  padding: 15px 4%;
+  max-width: 500px;
+color: #87ca81;
+font-size: 20px;
+margin: 0px auto;
+width: 92%;
+}
+.block0 img{
+  height: 30px;
+}
+.fa-envelope{
+float: left;
+position: relative;
+top: 4px;
+font-size: 20px;
+}
+.fa-user{
+float: right;
+position: relative;
+top: -23px;
+font-size: 20px;
+}
 .block1{
   padding: 20px;
   text-align: center;
