@@ -9,6 +9,9 @@ $(function() {
   });
   ls.goToSlide(6);
 
+  $('.fa-user').click(function(){
+    $(".address").slideToggle();
+  });
   window.plantStage = 0;
 
   $('.lightSlider #thismonth').click(function(){

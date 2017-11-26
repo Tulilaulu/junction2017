@@ -20,6 +20,8 @@
 <span class="fa fa-envelope"></span>  <img src="kasvi/fortum_logo_CMYK_EPS.JPG"/>
 <span class="fa fa-user"></span>
 </div>
+<div class="address">Matti Meikäläinen, Ristihaantie 15, 02750 Espoo</div>
+
 <div class="block1">
 	Grow your tree together with Fortum!
 </div>

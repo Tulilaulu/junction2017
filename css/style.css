@@ -15,6 +15,18 @@ width: 92%;
 .block0 img{
   height: 30px;
 }
+.address{
+  display: none;
+  background-color: #87ca81;
+  padding: 15px 4%;
+  text-align: center;
+  max-width: 500px;
+  color: white;
+  border-bottom: 2px solid white;
+  font-size: 20px;
+  margin: 0px auto;
+  width: 92%;
+}
 .fa-envelope{
 float: left;
 position: relative;
@@ -26,6 +38,7 @@ float: right;
 position: relative;
 top: -23px;
 font-size: 20px;
+cursor: pointer;
 }
 .block1{
   padding: 20px;
